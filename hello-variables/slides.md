@@ -113,7 +113,7 @@ Python provides **arithmetic operators**, which are special symbols that represe
 
 <br>
 
-```
+```python
 >>> ( 2 * 47 - 11 + 1 ) / 2
 42.0
 ```
@@ -177,21 +177,6 @@ Some values may look like numbers, but if they are in quotation marks, they are 
 
 ---
 
-# Values and types
-
-##
-
-You may be tempted to use commas to improve readability in large integers, such as `1,000,000`. However, this is not a legal *integer* in Python:
-
-```python
->>> 1,000,000
-(1, 0, 0)
-```
-
-Python interprets `1,000,000` as a comma-separated sequence of integers
-
----
-
 # Revisiting division
 
 ##
@@ -214,4 +199,4 @@ dividing integers gives a floating-point number result:
 42.0
 ```
 
-This is because in Python all results of division, even integer division, are typed as floating-point numbers.
+This is because in Python all results of division are typed as floating-point numbers.
