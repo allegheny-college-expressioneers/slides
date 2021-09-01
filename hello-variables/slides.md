@@ -200,3 +200,252 @@ dividing integers gives a floating-point number result:
 ```
 
 This is because in Python all results of division are typed as floating-point numbers.
+
+---
+
+# Variables
+
+##
+
+A **variable** is a name that refers to a value.
+
+An **assignment statement** creates a new variable and gives it a value:
+
+```python
+>>> message = 'And now for something completely different'
+>>> n = 17
+>>> pi = 3.1415926535897932
+```
+
+<v-click>
+
+Choose a meaningful name for your variable---it should document what the variable is used for.
+
+```python
+>>> n = 'Maria'
+>>> first_name = 'Maria'
+```
+
+```python
+>>> num = 3
+>>> num_of_apples = 3
+```
+
+</v-click>
+
+---
+
+# Variables
+
+## Naming rules
+
+- Can contain letters, numbers, and underscores (`_`)
+- Must start with either a letter or underscore
+- Are case-sensitive
+
+<v-click>
+
+```python
+76trombones = 'big parade'
+```
+
+</v-click>
+
+<v-click>
+
+`SyntaxError: invalid syntax`: Starts with number
+
+</v-click>
+
+<v-click>
+
+```python
+more@ = 1000000
+```
+
+</v-click>
+
+<v-click>
+
+`SyntaxError: invalid syntax`: `@` is not a letter, number, or underscore
+
+</v-click>
+
+<v-click>
+
+```python
+class = 'Advanced Theoretical Zymurgy'
+```
+
+</v-click>
+
+<v-click>
+
+`SyntaxError: invalid syntax`: `class` is a **Python keyword**
+
+</v-click>
+
+---
+
+# Python keywords
+
+##
+
+Python reserves these keywords to recognize the structure of the program.
+
+```text
+False      class      finally    is         return
+None       continue   for        lambda     try
+True       def        from       nonlocal   while
+and        del        global     not        with
+as         elif       if         or         yield
+assert     else       import     pass
+break      except     in         raise
+```
+
+<v-click>
+
+They cannot be used as variable names.
+But, they can be *in* a variable name.
+
+```python
+>>> class_name = 'Computational Expression'
+```
+
+No need to memorize them!
+
+</v-click>
+
+---
+
+# Expressions and statements
+
+##
+
+An **expression** is a combination of values, variables, and operators.
+
+```python
+>>> 112
+112
+>>> x
+-520
+>>> x + 112
+-408
+```
+
+<v-click>
+
+A **statement** is a unit of code that has an effect, like creating a variable or displaying a value.
+
+```python
+>>> n = 17
+>>> print(n)
+```
+
+In general, statements don't have values.
+
+</v-click>
+
+---
+
+# Running Python in script mode
+
+##
+
+To write programs longer than a few lines of code, it is easier to save the program in a Python **script** (`.py`) and to run the interpreter in **script mode** to execute the script.
+
+1. Write code in script, such as `hello_world.py`
+2. Execute script with interpreter by running `python <PATH-TO-SCRIPT>`, e.g. `python hello_world.py`
+
+Generally, you use interactive mode to *test* bits of code and *write* programs in scripts to run in script mode.
+
+In interactive mode, expressions are evaluated and their results are displayed:
+
+```python
+>>> miles = 26.2
+>>> miles * 1.61
+42.182
+```
+
+However, in script mode, expressions have no visible effect. You need to use a print statement to display their results:
+
+```python
+miles = 26.2
+print(miles * 1.61)
+```
+
+---
+
+# Assignment operators
+
+##
+
+Often, you want to add or subtract from a variable's current value.
+
+```python
+count = count + 1
+count = count - 1
+```
+
+<v-click>
+
+You can also write these statements using the `+=` and `-=` assignment operators.
+
+```python
+count += 1
+count -= 1
+```
+
+Though both ways of writing these statements are *valid*, the latter is more concise and easier to read.
+
+</v-click>
+---
+
+# Debugging and types of errors
+
+##
+
+Programmer errors are referred to as **bugs**. Tracking down these errors is known as **debugging**.
+
+<v-click>
+
+**Syntax error:**\
+"Syntax" refers to the rules about the structure of a program that are defined by the programming language. A syntax error occurs when a rule is violated.
+
+```python
+>>> print'Hello, World!')
+  File "<stdin>", line 1
+    print'Hello, World!')
+         ^
+SyntaxError: invalid syntax
+```
+
+</v-click>
+
+---
+
+# Debugging and types of errors
+
+##
+
+**Runtime error:**\
+Runtime errors occur after a program has started running. They are also referred to as **exceptions** because they indicate that something exceptional has occurred. They are rare in simpler programs.
+
+<v-click>
+
+**Semantic error:**\
+The word "semantic" means related to meaning and semantic errors occur when your code does not do what you *meant* it to do. Your code will run without generating error messages, but it will not do the right thing.
+
+</v-click>
+
+<v-click>
+
+**What kind of error was made when you tried to define a large integer value using commas (1,000,000), but the value was interpreted as a comma-separated sequence of integers instead?**
+
+</v-click>
+
+<v-click>
+
+Identifying the type of error can help you track down bugs more quickly.
+
+</v-click>
