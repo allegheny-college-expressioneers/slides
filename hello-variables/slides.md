@@ -354,10 +354,20 @@ In general, statements don't have values.
 
 To write programs longer than a few lines of code, it is easier to save the program in a Python **script** (`.py`) and to run the interpreter in **script mode** to execute the script.
 
+<v-click>
+
 1. Write code in script, such as `hello_world.py`
 2. Execute script with interpreter by running `python <PATH-TO-SCRIPT>`, e.g. `python hello_world.py`
 
+</v-click>
+
+<v-click>
+
 Generally, you use interactive mode to *test* bits of code and *write* programs in scripts to run in script mode.
+
+</v-click>
+
+<v-click>
 
 In interactive mode, expressions are evaluated and their results are displayed:
 
@@ -367,12 +377,18 @@ In interactive mode, expressions are evaluated and their results are displayed:
 42.182
 ```
 
+</v-click>
+
+<v-click>
+
 However, in script mode, expressions have no visible effect. You need to use a print statement to display their results:
 
 ```python
 miles = 26.2
 print(miles * 1.61)
 ```
+
+</v-click>
 
 ---
 
