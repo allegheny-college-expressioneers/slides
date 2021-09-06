@@ -178,6 +178,8 @@ So far, we have looked at the elements of a program—variables, expressions, an
 
 One of the most useful features of programming languages is their ability to take small building blocks and **compose** them.
 
+<v-click>
+
 For example, the argument to a function can be any kind of expression, including arithmetic operations:
 
 ```python
@@ -185,11 +187,17 @@ height = math.sin(0.7)
 x = math.sin(degrees / 360.0 * 2 * math.pi)
 ```
 
+</v-click>
+
+<v-click>
+
 And even function calls:
 
 ```python
 x = math.exp(math.log(x+1))
 ```
+
+</v-click>
 
 ---
 
