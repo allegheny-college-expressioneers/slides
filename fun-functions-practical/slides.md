@@ -6,7 +6,7 @@ highlighter: shiki
 
 # Fun Functions Practical
 
-## Let's practice communicating about functions
+## Let's *talk* about functions
 
 ---
 
@@ -14,7 +14,7 @@ highlighter: shiki
 
 ---
 
-# Write a function named `calculate_ellipse_area` that calculates the area of an ellipse based on the values of its ***a*** and ***b*** axes. The formula for the area of an ellipse is ***A = π a b***. Call this function to calculate the area of an ellipse with an ***a*** axis of 4 and a ***b*** axis of 3 and store the result in a variable named `ellipse_area`. Then, print the value of `ellipse_area`. 
+# Write a function named `calculate_ellipse_area` that calculates the area of an ellipse based on the values of its ***a*** and ***b*** axes. The formula for the area of an ellipse is ***A = π a b***. Call this function to calculate the area of an ellipse with an ***a*** axis of 4 and a ***b*** axis of 3 and store the result in a variable named `ellipse_area`. Then, print the value of `ellipse_area`.
 
 ---
 
