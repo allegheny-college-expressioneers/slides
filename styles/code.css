@@ -2,3 +2,7 @@
 :not(pre) > code:after {
   content: '';
 }
+
+:not(pre) > code {
+  background-color: gainsboro;
+}
