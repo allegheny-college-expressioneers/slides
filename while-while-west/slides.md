@@ -25,7 +25,7 @@ The **floor division** operator, `//`, divides two numbers and rounds down to an
 
 <v-click>
 
-The **modulus operator**, `%`, which divides two numbers and returns the remainder.
+The **modulus operator**, `%`, divides two numbers and returns the remainder.
 
 ```python
 >>> minutes % 60
@@ -248,7 +248,7 @@ if x > 0:
   print('x is positive')
 ```
 
-The boolean expression after `if`---`x > 0`---is the **condition**. If it is true, the indented statement runs. It is false, nothing happens. There is no limit on how many indented statements you can have, but you must have at least one.
+The boolean expression after `if`---`x > 0`---is the **condition**. If it is true, the indented statement runs. If it is false, nothing happens. There is no limit on how many indented statements you can have, but you must have at least one.
 
 </v-click>
 
@@ -260,12 +260,21 @@ The boolean expression after `if`---`x > 0`---is the **condition**. If it is tru
 
 Check if `x` is an even number. If it is, print its value and that it is even.
 
+
+```python{monaco}
+x = 2
+```
+
+<v-click>
+
 ```python{monaco}
 def is_even(number):
   return number % 2 == 0
 
 x = 2
 ```
+
+</v-click>
 
 <v-click>
 
