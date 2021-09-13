@@ -1,346 +1,281 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
-highlighter: shiki
-# show line numbers in code blocks
-lineNumbers: false
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
----
-
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-</style>
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
 theme: default
+class: 'text-center font-bold'
+highlighter: prism
+download: true
 ---
+
+# While, While West
+
+---
+
+# Floor division and modulus
+
+##
+
+The **floor division** operator, `//`, divides two numbers and rounds down to an integer.
+
+```python
+>>> minutes = 105
+>>> minutes / 60
+1.75
+>>> minutes // 60
+1
 ```
 
-```yaml
----
-theme: seriph
----
+<v-click>
+
+The **modulus operator**, `%`, which divides two numbers and returns the remainder.
+
+```python
+>>> minutes % 60
+45
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+</v-click>
 
 ---
-preload: false
----
 
-# Animations
+# Modulus
 
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
+##
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
+The modulus operator is more useful than you might think.
+
+<v-click>
+
+You can check if one number is divisible by another: if `x % y` is 0, then you know that `x` is divisible by `y`.
+
+```python
+def is_even(number):
+  return number % 2 == 0
 ```
 
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+</v-click>
 
 ---
 
-# LaTeX
+# Keyboard input
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+##
 
-<br>
+Python provides a built-in function called `input` that stops the program and waits for the user to type something. When the user presses **Return** or **Enter**, the program resumes and `input` returns what the user typed as a string.
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+<v-click>
 
-Block
-$$
-\begin{array}{c}
+`input` is a fruitful function---it returns what the user typed. You will almost always want to store its return value in a variable.
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
+```python
+>>> text = input()
+What are you waiting for?
+>>> text
+'What are you waiting for?'
 ```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+</v-click>
+
+<v-click>
+
+You usually want to tell the user what to type. You can pass in a prompt as the argument to `input`.
+
+```python
+>>> first_number = input('Enter a number: ')
+Enter a number: 3
 ```
 
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
+</v-click>
 
 ---
-layout: center
-class: text-center
+
+# Keyboard input
+
+##
+
+<v-click>
+
+You can use the newline special character, `\n`, if you would like the user to enter input on a new line.
+
+```python
+>>> first_number = input('Enter a number:\n')
+Enter a number:
+3
+```
+
+</v-click>
+
+<v-click>
+
+Remember that `input` returns the user input as a string. If you want to use the user input for a numerical computation, you need to first convert the return value into the appropriate data type.
+
+</v-click>
+
+<v-click>
+
+```python{monaco}
+>>> first_number = input('Enter a number: ')
+Enter a number: 3
+>>> second_number = input('Enter another number: ')
+Enter another number: 2
+>>> first_number + second_number
+'32'
+```
+
+</v-click>
+
 ---
 
-# Learn More
+# Boolean expressions
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+##
+
+A **boolean expression** is an expression that is either true or false.
+
+```python
+>>> 5 == 5
+True
+>>> 5 == 6
+False
+```
+
+These boolean expressions use the `==` **relational operator**, which produces `True` if the operands are equal and `False` if they are not.
+
+---
+
+# Boolean expressions
+
+##
+
+There are other relational operators that can be used in boolean expressions.
+
+| Expression | Description                     |
+|------------|---------------------------------|
+| `x != y`   | x is not equal to y             |
+| `x > y`    | x is greater than y             |
+| `x < y`    | x is less than y                |
+| `x >= y`   | x is greater than or equal to y |
+| `x <= y`   | x is less than or equal to y    |
+
+---
+
+# Relational operators: A couple things to note...
+
+##
+
+A common error is to use a single equal sign (`=`) instead of a double equal sign (`==`). Remember that `=` is an assignment operator and `==` is a relational operator.
+
+```python{monaco}
+>>> x = 2
+>>> y = 3
+>>> x = y
+>>> x
+3
+```
+
+<v-click>
+
+There is no such thing as `=<` or `=>`.
+
+```python
+>>> x = 2
+>>> y = 3
+>>> x =< y
+File "<stdin>", line 1
+  x =< y
+     ^
+SyntaxError: invalid syntax
+```
+
+Try to remember the phrases "less than or equal to" `<=` and "greater than or equal to" `>=`.
+
+</v-click>
+
+---
+
+# Logical operators
+
+##
+
+**Logical operators** are used to *combine* boolean expressions.
+
+In Python, the logical operators are `and`, `or`, and `not`.
+
+<v-click>
+
+The meaning of these logical operators in programming are similar to their meaning in English.
+
+</v-click>
+
+<v-clicks>
+
+`and`: `x > 0 and x < 10` is true only if `x` is greater than 0 *and* less than 10.
+
+`or`: `n % 2 == 0 or n % 3 == 0` is true if *either or both* of the conditions is true, that is, if the number is divisible by 2 *or* 3.
+
+`not`: `not` operator negates a boolean expression, so `not (x > y)` is true if `x > y` is false, that is, if `x` is less than or equal to `y`.
+
+</v-clicks>
+
+---
+
+# Logical operators
+
+##
+
+`7 > 2 and 7 % 2 == 0` <v-click>`False`</v-click>
+
+<v-click>`8 - 2 < 4 or True`</v-click> <v-click>`True`</v-click>
+
+<v-click>`not False`</v-click> <v-click>`True`</v-click>
+
+<v-click>`True or 2 + 3 > x`</v-click> <v-click>`True`</v-click>
+
+<v-click>`3 % 4 == 0 or (7 % 2 == 1 and 12 % 2 == 1)`</v-click> <v-click>`False`</v-click>
+
+---
+
+# Conditional execution
+
+##
+
+In almost all useful programs, we need the ability to check conditions and change the behavior of the program accordingly. **Conditional statements** give us this ability.
+
+<v-click>
+
+The simplest conditional statement is the `if` statement:
+
+```python
+if x > 0:
+  print('x is positive')
+```
+
+The boolean expression after `if`---`x > 0`---is the **condition**. If it is true, the indented statement runs. It is false, nothing happens. There is no limit on how many indented statements you can have, but you must have at least one.
+
+</v-click>
+
+---
+
+# Conditional execution
+
+##
+
+Check if `x` is an even number. If it is, print its value and that it is even.
+
+```python{monaco}
+def is_even(number):
+  return number % 2 == 0
+
+x = 2
+```
+
+<v-click>
+
+Check if `y` is an an odd number. If it is, print its value and that it is odd.
+
+```python{monaco}
+def is_even(number):
+  return number % 2 == 0
+
+y = 3
+```
+
+</v-click>
