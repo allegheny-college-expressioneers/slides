@@ -233,7 +233,7 @@ The meaning of these logical operators in programming are similar to their meani
 
 ---
 
-# Boolean datatype
+# Boolean type
 
 ##
 
@@ -389,6 +389,7 @@ def countdown(n):
         print(n)
         countdown(n-1)
 ```
+
 <v-click>
 
 If `n` is 0 or negative, it outputs the word, "Blastoff!". Otherwise, it prints `n` and then calls `countdown` (itself). The condition(s) where the function no longer calls itself is referred to as the **base case**. So the base case of `countdown` is when `n` is 0 or negative. Here is the output of calling `countdown(3)`:
@@ -405,46 +406,6 @@ Blastoff!
 ```
 
 </v-click>
-
----
-
-# Recursion
-
-##
-
-Stepping through the flow of execution gives us...
-
-<v-clicks>
-
-```text
-countdown begins: n=3, outputs the value 3, calls itself...
-```
-
-```text
-    countdown begins: n=2, outputs the value 2, calls itself...
-```
-
-```text
-        countdown begins: n=1, outputs the value 1, calls itself...
-```
-
-```text
-            countdown begins with n=0, outputs the word "Blastoff!" and returns.
-```
-
-```text
-        countdown that had n=1 returns.
-```
-
-```text
-    countdown that had n=2 returns.
-```
-
-```text
-countdown that had n=3 returns.
-```
-
-</v-clicks>
 
 ---
 
@@ -478,7 +439,7 @@ You can almost read this `while` statement as if it were English. It means, "Whi
 
 ##
 
-More formally, here is the flow of execution for a while statement:
+More formally, here is the flow of execution for a `while` statement:
 
 <v-clicks>
 
@@ -497,17 +458,6 @@ This type of execution flow is called a loop because the third step loops back a
 <v-click>
 
 The body of the loop should change the value of one or more variables so that the condition becomes false eventually and the loop terminates. Otherwise the loop will repeat forever, which is called an **infinite loop**.
-
-</v-click>
-
-<v-click>
-
-```python
-def shampoo_instructions():
-  while True:
-    print("Lather, rinse, repeat")
-  print("Finished?")
-```
 
 </v-click>
 
@@ -552,6 +502,6 @@ Done!
 
 <v-click>
 
-This way of writing while loops is common because you can check the condition anywhere in the loop and you can express the stop condition affirmatively rather than negatively.
+This way of writing while loops is common because you can check the condition anywhere in the loop (not just at the top) and you can express the stop condition affirmatively ("stop when this happens") rather than negatively ("keep going until that happens").
 
 </v-click>
