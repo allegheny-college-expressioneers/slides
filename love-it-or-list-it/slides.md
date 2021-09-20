@@ -1,346 +1,773 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
-highlighter: shiki
-# show line numbers in code blocks
-lineNumbers: false
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
----
-
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-</style>
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
 theme: default
+class: 'text-center font-bold'
+highlighter: prism
+download: true
 ---
+
+# Love It or List It
+
+##
+
+---
+
+# What are lists?
+
+##
+
+A **list** is a **data structure**, or collection of data values.
+
+Lists allow us to store multiple values in one variable.
+
+<v-click>
+
+```python
+sea_creature_one = 'shark'
+sea_creature_two = 'cuttlefish'
+sea_creature_three = 'squid'
+sea_creature_four = 'mantis shrimp'
+sea_creature_five = 'anemone'
 ```
 
-```yaml
----
-theme: seriph
----
+</v-click>
+
+<v-click>
+
+```python
+sea_creatures = ['shark', 'cuttlefish', 'squid', 'mantis shrimp', 'anemone']
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
+</v-click>
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+<v-click>
 
-</div>
+Each value in a list is referred to as an **element**, or **item**, in the list.
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+</v-click>
 
 ---
-preload: false
----
 
-# Animations
+# What can be stored in a list?
 
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
+##
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
+<v-click>
+
+Anything.
+
+</v-click>
+
+<v-click>
+
+You can have a list with just one type of element...
+
+```python
+fruits = ['apple', 'orange', 'banana'] # List of strings
 ```
 
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
+</v-click>
 
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
+<v-click>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+a list with multiple types of elements...
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
+```python
+hogwash = [2, 'foo', True, 3.14, None]
 ```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+</v-click>
+
+<v-click>
+
+a list containing other lists...
+```python
+alphabet_soup = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
 ```
 
-</div>
+</v-click>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+<v-click>
 
+or even an empty list.
+
+```python
+cookie_jar = []
+```
+
+</v-click>
 
 ---
-layout: center
-class: text-center
+
+# When should you use a list?
+
+##
+
+When you want to work with many related values.
+
+<v-click>
+
+Lists allow you to:
+
+</v-click>
+
+<v-click>
+
+- Keep data together that belong together
+
+</v-click>
+
+<v-click>
+
+- Condense your code
+
+```python
+trial_one = 5.5
+trial_two = 5.7
+trial_three = 5.3
+
+trials = [5.5, 5.7, 5.3]
+```
+
+</v-click>
+
+<v-click>
+
+- Perform the same operations on multiple values at once
+
+```python
+>>> grades = [7, 9, 8]
+>>> for i in range(len(grades)):
+>>>   grades[i] = grades[i] + 1
+>>> grades
+[8, 10, 9]
+```
+
+</v-click>
+
 ---
 
-# Learn More
+# How to create a list
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+##
+
+Lists are defined by enclosing comma-separated elements within square brackets `[]`.
+
+<v-clicks>
+
+```python
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+```python
+vec = [-4, -2, 0, 2, 4]
+```
+
+```python
+matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+] # Contains nested lists
+```
+
+```python
+a = [-1, 1, 66.25, 333, 333, 1234.5]
+```
+
+```python
+browser_history = [] # Empty list
+```
+
+</v-clicks>
+
+---
+
+# How to access an element in a list
+
+##
+
+Each element in a list has a position, or **index**. The first element of a list has an index of 0.
+
+To access an element in a list, write the name of the list, followed by the bracket operator, `[]`. Put the index of the element you want to access within the brackets.
+
+<v-clicks>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits[1]
+'apple'
+```
+
+```python
+>>> vec = [-4, -2, 0, 2, 4]
+>>> vec[-1] # Negative indices count backward from the end of the list
+4
+>>> vec[-3]
+0
+```
+
+```python
+>>> def middle_index(list):
+>>>   return len(list) // 2
+>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+>>> a[middle_index(a)] # Index can be any expression that evaluates to an integer (yay composition!)
+```
+
+</v-clicks>
+
+---
+
+# How to access an element in a list
+
+##
+
+Use multiple bracket operators and indices to access elements within nested lists.
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> matrix[0]
+[1, 2, 3, 4]
+>>> matrix[0][2]
+3
+```
+
+<v-click>
+
+```python
+>>> alphabet_soup = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
+>>> alphabet_soup[2]
+['cc', 'dd', ['eee', 'fff']]
+>>> alphabet_soup[2][2]
+['eee', 'fff']
+>>> alphabet_soup[2][2][0]
+'eee'
+```
+
+</v-click>
+
+---
+
+# What happens when you try to access an element that does not exist?
+
+##
+
+<v-click>
+
+```python
+>>> vec = [-4, -2, 0, 2, 4]
+>>> vec[len(vec)]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+```
+
+</v-click>
+
+<v-click>
+
+Off-by-one errors when you base the index on the length of the list are very common because the indices start at 0!
+
+</v-click>
+
+---
+
+# How to assign an element of a list
+
+##
+
+In an assignment statement, the element to be assigned is identified on the left side using the bracket operator.
+
+<v-clicks>
+
+```python
+>>> alphabet_soup = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
+>>> alphabet_soup[0] = 'z'
+>>> alphabet_soup
+['z', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
+```
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits[-2] = 'mango'
+>>> fruits
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'mango', 'banana']
+```
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> matrix[0][2] = 30
+>>> matrix
+[[1, 2, 30, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+```
+
+</v-clicks>
+
+---
+
+# Can you add an element by assigning the index one above the index of the last element of the list?
+
+##
+
+<v-clicks>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits[7] = 'mango'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list assignment index out of range
+```
+
+Nope. The index must already exist to be assigned.
+
+Instead, you can add elements using the `append` and `extend` functions...
+
+</v-clicks>
+
+---
+
+# How to check if an element is in a list
+
+##
+
+<v-clicks>
+
+Use the `in` operator.
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> 'pear' in fruits
+True
+>>> 'watermelon' in fruits
+False
+```
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> [5, 6, 7, 8] in matrix
+True
+>>> [5, 6, 7] in matrix
+False
+```
+
+</v-clicks>
+
+---
+
+# How to check if an element is in a list
+
+##
+
+<v-clicks>
+
+The `in` operator creates a boolean expression that evaluates to either `True` or `False`.
+You can use it anywhere a boolean expression is expected.
+
+```python
+vec = [-4, -2, 0, 2, 4]
+if -2 in vec:
+  print('vec contains -2')
+```
+
+```python
+completed = [False, False, False]
+i = 0
+while False in completed:
+  completed[i] = True
+  i += 1
+print(completed) # [True, True, True]
+```
+
+</v-clicks>
+
+---
+
+# How to traverse a list using a `for` loop
+
+##
+
+<v-click>
+
+There are two ways to traverse a list using a `for` loop:
+
+1. Traverse the elements
+2. Traverse the indices
+
+</v-click>
+
+---
+
+# How to traverse the elements in a list using a `for` loop
+
+##
+
+```python
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+for fruit in fruits: # Ends with colon
+  print(fruit) # Indented statements are run for each fruit in fruits
+```
+
+<v-click>
+
+Let's break down this `for` loop:
+
+</v-click>
+
+<v-clicks>
+
+- `for`: keyword that begins a `for` loop
+- `fruit`: variable that stores the current element on each iteration of the `for` loop (you name it!)
+  - First iteration: `fruit` equals `'orange'`
+  - Second iteration: `fruit` equals `'apple'`
+  - Third iteration: `fruit` equals `'pear'`
+  - And so on and so forth...
+- `in`: keyword that precedes the name of the list to iterate through
+- `fruits`: list to iterate through
+
+</v-clicks>
+
+---
+
+# How to traverse the elements in a list using a `for` loop
+
+##
+
+```python
+>>> vec = [-4, -2, 0, 2, 4]
+>>> for v in vec:
+>>>   print(v + 1)
+-3
+-1
+1
+3
+5
+```
+
+---
+
+# How to traverse the elements in a list using a `for` loop
+
+##
+
+```python
+>>> alphabet_soup = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
+>>> for noodle in alphabet_soup:
+>>>   print(noodle)
+a
+b
+['cc', 'dd', ['eee', 'fff']]
+g
+h
+```
+
+<v-click>
+
+```python
+>>> sea_creatures = ['shark', 'cuttlefish', 'squid', 'mantis shrimp', 'anemone']
+>>> for creature in sea_creatures:
+>>>   print(f'The {creature} lives in the 🌊!')
+The shark lives in the 🌊!
+The cuttlefish lives in the 🌊!
+The squid lives in the 🌊!
+The mantis shrimp lives in the 🌊!
+The anemone lives in the 🌊!
+```
+
+</v-click>
+
+---
+
+# How to traverse the elements in a list using a `for` loop
+
+##
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> for row in matrix: # First iteration, row equals [1, 2, 3, 4]
+>>>   for element in row: # First iteration, element equals 1
+>>>     print(element)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+```
+
+---
+
+# How to traverse the indices of a list using a `for` loop
+
+##
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> for fruit in fruits:
+>>>   print(fruit)
+orange
+apple
+pear
+```
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> for i in range(len(fruits)):
+>>>   print(i)
+0
+1
+2
+```
+
+</v-click>
+
+<v-click>
+
+The structure of the `for` loop is the same:
+
+- `for`: keyword that begins a `for` loop
+- `i`: variable that stores the current element on each iteration of the `for` loop (you name it!)
+- `in`: keyword that precedes the name of the list to iterate through
+- `range(len(fruits))`: list to iterate through
+
+</v-click>
+
+---
+
+# How to traverse the indices of a list using a `for` loop
+
+##
+
+<v-clicks>
+
+If `range(len(fruits))` is the list that is being iterated through, let's look at what that list contains.
+
+`range(stop)` is a function that takes a stop integer and returns something *like a list* that contains the integers 0 through `stop - 1`.
+
+For instance, `range(3)` returns something like a list that contains the elements `0`, `1`, and `2`.
+
+`range(2)` contains the elements `0` and `1`.
+
+`range(5)` contains the elements `0`, `1`, `2`, `3`, and `4`.
+
+`len(list)` is a function that takes a list and returns its length.
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> len(fruits)
+3
+```
+
+So, `range(len(fruits))` gives you something like a list that contains all of the indices in `fruits`.
+
+`len(fruits)` is `3`. `range(3)` contains `0`, `1`, and `2`.
+
+</v-clicks>
+
+---
+
+# How to traverse the indices of a list using a `for` loop
+
+##
+
+Importantly, the list-like something that `range` returns is *iterable*, meaning you can iterate through it as you would a list. That is why you can use it in a `for` loop after the `in` keyword:
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> for i in range(len(fruits)):
+>>>   print(i)
+0
+1
+2
+```
+</v-click>
+
+---
+
+# When should you traverse the indices of a list using a `for` loop (rather than its elements)?
+
+##
+
+1. To assign an element in the list within an iteration of the `for` loop
+2. To access elements in terms of the current element's index within an iteration of the `for` loop
+
+---
+
+# When should you traverse the indices of a list using a `for` loop (rather than its elements)?
+
+##
+
+1. To assign an element in the list within an iteration of the `for` loop
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> for fruit in fruits:
+>>>   # Want to assign each fruit to something else...
+>>>   # But no way to do this with this for loop!
+```
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear']
+>>> for i in range(len(fruits)):
+>>>   # Ah, now we can use i to access each element in fruits
+>>>   fruits[i] = fruits[i] + 's'
+>>> fruits
+['oranges', 'apples', 'pears']
+```
+
+</v-click>
+
+---
+
+# When should you traverse the indices of a list using a `for` loop (rather than its elements)?
+
+##
+
+2. To access elements in terms of the current element's index within an iteration of the `for` loop
+
+```python
+>>> numbers = [1, 3, 2, 4]
+>>> for number in numbers:
+>>>   # Want to check if numbers is sorted by comparing each number to the next...
+>>>   # But, no way to get the next number with this for loop!
+```
+
+<v-click>
+
+```python
+>>> numbers = [1, 3, 2, 4]
+>>> for i in range(len(numbers) - 1):
+>>>   print(f'Comparing {numbers[i]} to {numbers[i + 1]}...')
+>>>   if numbers[i] > numbers[i + 1]:
+>>>     print('Numbers are not sorted!')
+>>>     break # Same behavior as in a while loop
+Comparing 1 to 3...
+Comparing 3 to 2...
+Numbers are not sorted!
+```
+</v-click>
+
+<v-click>
+
+Why `range(len(numbers) - 1)`?
+
+</v-click>
+
+---
+
+# Traversing lists: What happens when you loop over an empty list?
+
+##
+
+```python
+>>> cookie_jar = []
+>>> for cookie in cookie_jar:
+>>>   print('Cookie!')
+```
+
+<v-click>
+
+Zilch.
+
+</v-click>
+
+---
+
+# Traversing lists: How many elements does a list with nested lists contain?
+
+##
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> for i in range(len(matrix)):
+>>>   print(i)
+```
+
+---
+
+# Traversing lists: How many elements does a list with nested lists contain?
+
+##
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> for i in range(len(matrix)):
+>>>   print(i)
+0
+1
+2
+```
+
+Each nested list counts as only one element.
+
+---
+
+# How to concatenate lists
+
+##
+
+You can combine lists using the `+` operator (just like with strings!).
+
+<v-clicks>
+
+```python
+>>> my_favorite_numbers = [7, 25]
+>>> your_favorite_numbers = [99, 1001]
+>>> our_favorite_numbers = my_favorite_numbers + your_favorite_numbers
+>>> our_favorite_numbers
+[7, 25, 99, 1001]
+```
+
+```python
+>>> triangles = ['equilateral', 'isosceles', 'scalene']
+>>> quadrilaterals = ['square', 'rectangle', 'rhombus']
+>>> polygons = triangles + quadrilaterals
+>>> polygons
+['equilateral', 'isosceles', 'scalene', 'square', 'rectangle', 'rhombus']
+```
+
+```python
+>>> numbers = [0, 1, 2, 3]
+>>> words = ['foo', 'bar']
+>>> booleans = [True, False, False, True]
+>>> combo = numbers + words + booleans
+>>> combo
+[0, 1, 2, 3, 'foo', 'bar', True, False, False, True]
+```
+
+</v-clicks>
