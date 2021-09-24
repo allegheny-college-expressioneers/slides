@@ -682,6 +682,17 @@ Why `range(len(numbers) - 1)`?
 
 ---
 
+# Recap
+
+##
+
+- What are lists, why do we use them, and how do we create them? (comma-separated within brackets, `[]`!)
+- How to access and assign elements in a list (bracket, `[]`, operator!)
+- How to check if element is in a list (`in` operator!)
+- How to traverse the elements and indices of a list (`for` loops!)
+
+---
+
 # Traversing lists: What happens when you loop over an empty list?
 
 ##
