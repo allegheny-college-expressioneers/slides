@@ -771,3 +771,388 @@ You can combine lists using the `+` operator (just like with strings!).
 ```
 
 </v-clicks>
+
+---
+
+# List slices: How to access multiple elements in a list at once
+
+##
+
+You can access multiple elements at once by using the slice operator--`[n:m]`.
+
+The slice operator will return elements from index `n` to `m - 1`.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits[1:3] # Will return elements from index 1 to 2
+['apple', 'pear']
+```
+
+</v-click>
+
+<v-click>
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> matrix[1:3]
+[[5, 6, 7, 8], [9, 10, 11, 12]]
+```
+
+</v-click>
+
+---
+
+# List slices: How to assign multiple items in a list at once
+
+##
+
+Use the slice operator on the left side of an assignment statement.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits[1:3] = ['mango', 'watermelon']
+>>> fruits
+['orange', 'mango', 'watermelon', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+</v-click>
+
+<v-click>
+
+```python
+>>> matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+>>> matrix[1:3] = [[50, 60, 70, 80], [90, 100, 110, 120]]
+>>> matrix
+[[1, 2, 3, 4], [50, 60, 70, 80], [90, 100, 110, 120]]
+```
+
+</v-click>
+
+---
+
+# List slices: How to copy a list
+
+##
+
+Omitting the start (`n`) and stop (`m`) indices in the slice operator returns a copy of the whole list.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> copy_of_fruits = fruits[:]
+>>> copy_of_fruits
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+</v-click>
+
+---
+
+# List methods: How to add an element to the end of a list
+
+##
+
+Use the `append` function.
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.append('strawberry')
+>>> fruits
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'strawberry']
+```
+
+<v-click>
+
+How do you add multiple elements to the end of a list?
+
+</v-click>
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.append('strawberry')
+>>> fruits.append('cantaloupe')
+>>> fruits.append('mandarin')
+>>> fruits
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'strawberry', 'cantaloupe', 'mandarin']
+```
+
+</v-click>
+
+---
+
+# List methods: How to add all the elements of one list to the end of another
+
+##
+
+Use the `extend` function.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.extend(['strawberry', 'cantaloupe', 'mandarin'])
+>>> fruits
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'strawberry', 'cantaloupe', 'mandarin']
+```
+
+</v-click>
+
+---
+
+# Deleting elements: By index
+
+##
+
+If you know the index of the element you'd like delete, use either the `pop` method or `del` operator.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> deleted_fruit = fruits.pop(1)
+>>> fruits
+['orange', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> deleted_fruit
+'apple'
+```
+
+</v-click>
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> del fruits[1]
+>>> fruits
+['orange', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+</v-click>
+
+<v-clicks>
+
+When would you want to use `pop` over `del`?
+
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> deleted_fruit = fruits.pop(1)
+>>> fruits
+['orange', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> f'The fruit that was delete was {deleted_fruit}!'
+'The fruit that was delete was apple!'
+```
+
+</v-clicks>
+
+---
+
+# Deleting elements: By value
+
+##
+
+If you know the value of the element you'd like to delete, use the `remove` method.
+
+<v-click>
+
+```python
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.remove('apple')
+>>> fruits
+['orange', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+</v-click>
+
+---
+
+# Objects and values
+
+<v-click>
+
+```python
+maria_lucky_numbers = [7, 128, 23]
+```
+
+</v-click>
+
+<v-click>
+
+```python
+sally_lucky_numbers = maria_lucky_numbers
+```
+
+`sally_lucky_numbers` is an **alias** for `maria_lucky_numbers`--they are identical.
+
+</v-click>
+
+<v-click>
+
+`True` or `False`?: `sally_lucky_numbers is maria_lucky_numbers`
+
+</v-click>
+
+<v-clicks>
+
+```python
+>>> maria_lucky_numbers[0] = 17
+>>> sally_lucky_numbers[0]
+```
+
+```python
+17
+```
+
+</v-clicks>
+
+---
+
+# Objects and values
+
+<v-click>
+
+```python
+maria_lucky_numbers = [7, 128, 23]
+sally_lucky_numbers = maria_lucky_numbers[:]
+```
+
+`sally_lucky_numbers` has the same value as `maria_lucky_numbers`, but is not the same object--they are equivalent, but not identical.
+
+</v-click>
+
+<v-click>
+
+```python
+>>> maria_lucky_numbers[0] = 17
+>>> sally_lucky_numbers[0]
+7
+```
+
+</v-click>
+
+---
+
+# Objects and values: Mutable vs. immutable
+
+##
+
+Lists are mutable:
+
+```python
+>>> maria_lucky_numbers[0] = 17
+>>> maria_lucky_numbers[0]
+17
+```
+
+<v-click>
+
+The other data types we've seen so far are not--they're immutable:
+
+```python
+>>> lucky_number = 99
+>>> lucky_number = 100 # Now pointing to different object
+```
+
+</v-click>
+
+---
+
+# List arguments
+
+##
+
+Because lists are mutable, when you pass a list into a function, the function may modify the list.
+
+```python
+>>> def delete_head(t):
+>>>   del t[0]
+
+>>> letters = ['a','b','c']
+>>> delete_head(letters)
+>>> letters
+['b','c']
+```
+
+---
+
+# List arguments
+
+##
+
+It is important to distinguish between operations that modify lists and those that create new lists.
+
+| **Operations that modify lists** | **Operations that create lists** |
+|----------------------------------|----------------------------------|
+| Assignment of element by index   | Concatenation                    |
+| `append`                         | Slicing                          |
+| `extend`                         |                                  |
+| `sort`                           |                                  |
+| `pop`                            |                                  |
+| `del`                            |                                  |
+| `remove`                         |                                  |
+
+Pay attention to which operations you use in functions!
+
+---
+layout: two-cols
+---
+
+# `middle`: Takes a list and returns a new list
+
+```python
+>>> def middle(list):
+>>>  return list[1:-1] # Slicing creates a new list!
+>>> t = [1, 2, 3, 4]
+>>> new_list = middle(t)
+>>> t
+[1, 2, 3, 4] # Unmodified!
+>>> new_list
+[2, 3]
+```
+
+::right::
+
+<v-click>
+
+# `chop`: Takes a list and modifies it
+
+```python
+>>> def chop(list):
+>>>   del list[0] # del modifies the list!
+>>>   list.pop() # pop modifies the list!
+>>> t = [1, 2, 3, 4]
+>>> chop(t)
+>>> t
+[2, 3] # Modified!
+```
+
+</v-click>
+
+---
+class: 'text-center font-bold'
+layout: 'center'
+---
+
+# Refer to reading for list of key terms and concepts!
+
+---
+class: 'text-center font-bold'
+layout: 'center'
+---
+
+# Schedule an office hour appointment for additional clarification or review!
