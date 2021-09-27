@@ -1,6 +1,18 @@
 .input .prompt_container {
     display: none
 }
+
 .output .prompt {
     display: none
+}
+
+
+/* Layout */
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
 }
