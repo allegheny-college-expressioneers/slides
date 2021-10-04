@@ -1,0 +1,24 @@
+.input .prompt_container {
+    display: none;
+}
+
+.output .prompt {
+    display: none;
+}
+
+
+/* Layout */
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+img.center {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
