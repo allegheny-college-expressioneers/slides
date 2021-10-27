@@ -144,6 +144,9 @@ The word "class" is interchangeable with "type".
 print(type('blue'))
 ```
 
+    <class 'str'>
+
+
 **Define a House type.**
 
 We have not yet created any objects of type `House`--we just defined the `House` type.
@@ -183,9 +186,137 @@ Everytime we call `House()`, we create a new object.
 
 We need to define what will go in the white boxes (i.e. what House objects will look like).
 
-There are two things we need to define:
+There are two things about each `House` object that we need to define:
 
-1. The value
-2. Things we can do to the value
+1. The value (this week)
+2. Things we can do to the value (next week)
 
 We define these things in the class definition.
+
+The value can be anything...
+
+- A string
+- A number (integer or float)
+- A boolean
+- A list
+- A dictionary
+- An object of a type *we* define
+
+And even...
+
+*Multiple* values.
+
+This is the beauty of defining our own types (and why we do it!)--they allow us to organize our values.
+
+**What are three values (i.e. information) you might want to store about a house?**
+
+How do you define values that each object of a type will contain?
+
+```python
+class Car:
+    """Represent a car."""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+jurassic = Car('Ford', 'Explorer', 1992)
+```
+
+Let's unpack this...
+
+- What is the `__init__` method? What are methods that start and end with underscores called in Python?
+- When is the `__init__` method *called* in this code?
+- What is the `self` parameter and what does it store?
+- How do we *use* the `self` parameter to assign attributes on the object being created?
+- How are the arguments passed into `Car()` used? Where is `self`?
+- What are the values of `jurassic.make`, `jurassic.model`, and `jurassic.year`?
+
+**What is the `__init__` method? What are methods that start and end with underscores called in Python?**
+
+`__init__` is referred to as the constructor method--called everytime a `Car` object is created, or constructed.
+
+`__init__` is an example of special method (https://docs.python.org/3/reference/datamodel.html#special-method-names)
+
+**When is the `__init__` method *called* in this code?**
+
+When a `Car` object is created!
+
+```python
+jurassic = Car('Ford', 'Explorer', 1992)
+```
+
+**What is the `self` parameter and what does it store?**
+
+A reference to the object being created.
+
+```python
+jurassic = Car('Ford', 'Explorer', 1992)
+```
+
+`self` refers to object stored in `jurassic`.
+
+**How do we *use* the `self` parameter to assign attributes on the object being created?**
+
+Dot notation!
+
+```python
+self.make = make
+self.model = model
+self.year = year
+```
+
+**How are the arguments passed into `Car()` used? Where is `self`?**
+
+Arguments are passed to `__init__`.
+
+`self` is automatically passed by Python.
+
+**What are the values of `jurassic.make`, `jurassic.model`, and `jurassic.year`?**
+
+
+```python
+class Car:
+    """Represent a car."""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+jurassic = Car('Ford', 'Explorer', 1992)
+print(f'Make: {jurassic.make}')
+print(f'Model: {jurassic.model}')
+print(f'Year: {jurassic.year}')
+```
+
+    Make: Ford
+    Model: Explorer
+    Year: 1992
+
+
+We can access an object's **attributes** (those set on `self`) with dot notation.
+
+**Define the `__init__`, or constructor, method of the `House` class such that objects of type `House` will have values `bedrooms` (number), `bathrooms` (number), and three other values of your choosing.**
+
+**Then, create two `House` objects (`home` and `vacation_home`) that each have different values.**
+
+**Finally, print their bedrooms and bathrooms.**
+
+```python
+class House:
+    """Represent a house."""
+    def __init__(self, bedrooms, bathrooms):
+        self.bedrooms = bedrooms
+        self.bathrooms = bathrooms
+        
+home = House(3, 2)
+vacation_home = House(4, 1)
+```
+
+![Houses in memory with values](houses-with-values.png)
+
+**Combine your ELI5 descriptions of the difference between a class and an object (of that class).**
+
+**Then, merge with another group and combine your ELI5s to produce an even *better* ELI5.**
+
+**Merge again with another group. Combine your ELI5s *again*.**
+
+**Let's come up with our best ELI5 as a class.**
