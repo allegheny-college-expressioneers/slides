@@ -19,3 +19,7 @@
 ## Cookie Cutter House
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/allegheny-college-expressioneers/slides/HEAD?urlpath=tree/cookie-cutter-house/index.ipynb)
+
+## Mad Methods
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/allegheny-college-expressioneers/slides/HEAD?urlpath=tree/mad-methods/index.ipynb)
